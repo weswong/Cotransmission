@@ -1,4 +1,9 @@
 # Cotransmission
+Requirements:
+Standard Python modules: numpy, collections,math, sys, itertools
+The Genome module from: https://github.com/edwenger/genepi
+
+
 P falciparum cotransmission model used in the paper titled "Modeling the genetic relatedness of Plasmodium falciparum parasites following meiotic recombination and cotransmission."
 
 The script is split into three components, a section regarding meiosis, an Infection class, and a sSimulation class.
@@ -10,6 +15,7 @@ Simulation class governs the actual running of the simulation.
 User decides the coi of the previous infection, the number of oocysts in the mosquito midgut, and the number of hepatocytes formed in the subsequent human host.
 Simulation is run on the commandline with the command:
 python co-transmission_relatedness_simulation_github.py {coi} {n_oocysts} {n_ihepatocytes}
+Please ensure that the cotx_util_github.py script is in the same directory or somewhere in the PYTHONPATH
 
 By default, it will only run 10 iteration. This can be changed by altering the value at line 397:
 s = Simulation.simulation(coi,n_oocysts,n_ihepatocytes,10)
