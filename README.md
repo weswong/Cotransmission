@@ -24,7 +24,7 @@ where the 10 indicates the number of repetitions to perform.
 
 Output is a json file that can be loaded back in as a dictionary using the json package (https://docs.python.org/2/library/json.html).
 The keys to this dictionary are:
-params = sim_params
+params = sim_params\n
 coi = proportion of cotransmission simulations ending with a final COI of {1,2,3,4...}
 relationships = proportions of each of the pedigrees describing cotransmitted parasites 
 average_ihep_relatedness = average pairwise relatedness of all parasites in the infected hepatocytes (includes genetically identical parasites)
