@@ -23,20 +23,22 @@ s = Simulation.simulation(coi,n_oocysts,n_ihepatocytes,10)
 where the 10 indicates the number of repetitions to perform.
 
 Output is a json file that can be loaded back in as a dictionary using the json package (https://docs.python.org/2/library/json.html).
-The keys to this dictionary are:
-params = sim_params\n
-coi = proportion of cotransmission simulations ending with a final COI of {1,2,3,4...}
-relationships = proportions of each of the pedigrees describing cotransmitted parasites 
-average_ihep_relatedness = average pairwise relatedness of all parasites in the infected hepatocytes (includes genetically identical parasites)
-std_ihep_relatedness = std deviation ofpairwise relatedness of all parasites in the infected hepatocytes (includes genetically identical parasites) 
-average_obs_relatedness = average pairwise relatedness of genetically distinct parasites in the infected hepatocytes
-std_obs_relatedness = std deviation of pairwise relatedness of genetically distinct parasites in the infected hepatocytes
-xover_block_distribution = interarrival distance block distribution
-n_chiasma_distribution = sim_n_chiasma_distribution
-        
-        
-params: describing the parameters used in the simulation
-Relationships -- the pedigrees describing cotransmitted parasites 
-average_obs_relatedness -- the average pairwise relatedness between genetically distinct strains
-std_obs_relatedness -- the standard deviation nof the pairwise relatedness between genetically idstinct strains
 
+The keys to this dictionary are:
+params = sim_params
+
+coi = proportion of cotransmission simulations ending with a final COI of {1,2,3,4...}
+
+relationships = proportions of each of the pedigrees describing cotransmitted parasites 
+
+average_ihep_relatedness = average pairwise relatedness of all parasites in the infected hepatocytes (includes genetically identical parasites)
+
+std_ihep_relatedness = std deviation ofpairwise relatedness of all parasites in the infected hepatocytes (includes genetically identical parasites) 
+
+average_obs_relatedness = average pairwise relatedness of genetically distinct parasites in the infected hepatocytes
+
+std_obs_relatedness = std deviation of pairwise relatedness of genetically distinct parasites in the infected hepatocytes
+
+xover_block_distribution = interarrival distance block distribution
+
+n_chiasma_distribution = sim_n_chiasma_distribution
