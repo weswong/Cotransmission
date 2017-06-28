@@ -1,5 +1,5 @@
 # Cotransmission
-Direct questions to: wesleywong@fas.harvard.edu
+Direct questions to: wesleywong@fas.harvard.edu or DFWirth@hsph.harvard.edu 
 
 Requirements:
 Standard Python modules: numpy, collections,math, sys, itertools
