@@ -22,7 +22,9 @@ Simulation is run on the commandline with the command (Please ensure that the co
 python co-transmission_relatedness_simulation_github.py {coi} {n_oocysts} {n_ihepatocytes}
 
 By default, it will only run 10 iteration. This can be changed by altering the value at line 397:
+
 s = Simulation.simulation(coi,n_oocysts,n_ihepatocytes,10)
+
 where the 10 indicates the number of repetitions to perform.
 
 Output is a json file that can be loaded back in as a dictionary using the json package (https://docs.python.org/2/library/json.html).
