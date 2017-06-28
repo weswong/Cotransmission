@@ -13,6 +13,7 @@ Simulation class governs the actual running of the simulation.
 
 
 User decides the coi of the previous infection, the number of oocysts in the mosquito midgut, and the number of hepatocytes formed in the subsequent human host.
+
 Simulation is run on the commandline with the command:
 python co-transmission_relatedness_simulation_github.py {coi} {n_oocysts} {n_ihepatocytes}
 Please ensure that the cotx_util_github.py script is in the same directory or somewhere in the PYTHONPATH
