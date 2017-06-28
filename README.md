@@ -1,4 +1,6 @@
 # Cotransmission
+Direct questions to: wesleywong@fas.harvard.edu
+
 Requirements:
 Standard Python modules: numpy, collections,math, sys, itertools
 The Genome module from: https://github.com/edwenger/genepi
