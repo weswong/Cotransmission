@@ -2,7 +2,9 @@
 Direct questions to: wesleywong@fas.harvard.edu or DFWirth@hsph.harvard.edu 
 
 Requirements:
-Standard Python modules: numpy, collections,math, sys, itertools
+
+Standard Python modules: numpy, collections,math, sys, itertools, json
+
 The Genome module from: https://github.com/edwenger/genepi
 
 
