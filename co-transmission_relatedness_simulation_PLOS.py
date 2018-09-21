@@ -305,13 +305,13 @@ class Infection:
     @classmethod
     def mosquito_transmission(cls,genome_pool,n_oocysts, n_ihepatocytes,weights=None):
         sporozoite_pool = []
-	if weights != None:
-	    np.random.shuffle(weights)
+        if weights != None:
+            np.random.shuffle(weights)
         for _ in range(n_oocysts):
             if weights == None:
                 p1, p2= np.random.choice(genome_pool, 2) # modify to accept weights
             else:
-		print weights
+                print weights
                 p1, p2= np.random.choice(genome_pool, 2, p=weights) 
             meiotic_products = meiosis(p1,p2)
             for o in meiotic_products:
@@ -458,7 +458,7 @@ class Simulation:
                 transmission = Infection.mosquito_transmission(host.genome_pool,n_oocysts,n_ihepatocytes, None)
             else:
                 weights = obtain_dirichlet_exponential_strain_proportions(strain_differential, poi)
-		transmission = Infection.mosquito_transmission(host.genome_pool,n_oocysts,n_ihepatocytes, weights)
+                transmission = Infection.mosquito_transmission(host.genome_pool,n_oocysts,n_ihepatocytes, weights)
             transmission.interpret_ihep_relationships()
             transmission.calculate_observable_relatedness()
             transmission.calculate_ibd_stats()

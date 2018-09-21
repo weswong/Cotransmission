@@ -283,8 +283,8 @@ class Infection:
     @classmethod
     def mosquito_transmission(cls,genome_pool,n_oocysts, n_ihepatocytes,weights=None):
         sporozoite_pool = []
-	if weights != None:
-	    np.random.shuffle(weights)
+        if weights != None:
+            np.random.shuffle(weights)
         for _ in range(n_oocysts):
             if weights == None:
                 p1, p2= np.random.choice(genome_pool, 2) # modify to accept weights

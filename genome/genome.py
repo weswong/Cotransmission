@@ -146,15 +146,15 @@ def gamma_interarrival_time(v=1):   #v=1 means no interference
     return d
                                  
 def get_crossover_points(v,chrom_length):
-	'''not ever used, generates chiasma locations on 4-chromatid bundle'''
-	next_point=-100000 #make it a stationary renewal process
-	xpoints=[]
-	while next_point < chrom_length:
-		if next_point > 0.:
-			xpoints.append(next_point)
+    '''not ever used, generates chiasma locations on 4-chromatid bundle'''
+    next_point=-100000 #make it a stationary renewal process
+    xpoints=[]
+    while next_point < chrom_length:
+        if next_point > 0.:
+            xpoints.append(next_point)
         d = gamma_interarrival_time(v)
         next_point+=d
-        return xpoints
+    return xpoints
 
 def oc_get_crossover_points(v, chrom_length):
     '''obligate chiasma version
