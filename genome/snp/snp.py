@@ -20,8 +20,7 @@ class SNP:
     @staticmethod
     def initialize_from(SNP_source,min_allele_freq):
         try:
-            print '.'.join(['old_genepi','snp',SNP_source])
-            mod=import_module('.'.join(['old_genepi','snp',SNP_source]))
+            mod=import_module(SNP_source)
 
             return mod.init(min_allele_freq)
         except ImportError as e:
