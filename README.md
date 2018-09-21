@@ -1,31 +1,28 @@
 # Cotransmission
-Direct questions to: wesleywong@fas.harvard.edu or DFWirth@hsph.harvard.edu 
+Direct questions to: w2w.wong@gmail.com or DFWirth@hsph.harvard.edu 
 
 Requirements
 Standard Python modules: numpy, collections,math, sys, itertools, json
 
-The Genome module from: https://github.com/edwenger/genepi
-
-
 P falciparum cotransmission model used in the paper titled "Modeling the genetic relatedness of Plasmodium falciparum parasites following meiotic recombination and cotransmission."
 
-The script is split into three components, a section regarding meiosis, an Infection class, and a sSimulation class.
+The script is split into three components, a section regarding meiosis, an Infection class, and a Simulation class.
 The meiosis part of the script governs the process of sexual recombination.
 Infection class is a container representing the parasites found in the human host.
 Simulation class governs the actual running of the simulation.
 
 
-User decides the coi of the previous infection, the number of oocysts in the mosquito midgut, and the number of hepatocytes formed in the subsequent human host.
+User decides the coi of the previous infection, the number of oocysts in the mosquito midgut, and the number of hepatocytes formed in the subsequent human host. COI is referred to as poi throughout the script (used to stand for polygenomicity of infection).
 
-Simulation is run on the commandline with the command (Please ensure that the cotx_util_github.py script is in the same directory or somewhere in the PYTHONPATH):
+Simulation is run on the commandline with the command (Please ensure that the cotx_util_github.py script and the genome folder is in the same directory):
 
-python co-transmission_relatedness_simulation_github.py {coi} {n_oocysts} {n_ihepatocytes}
+python transmission_relatedness_simulation_PLOS.py {coi} {n_oocysts} {n_ihepatocytes} {strain_differential} {n_repetitions}
+The first argument is the COI, the second argument is the # oocysts in the mosquito midgut, the third argument is the number of infected hepatocytes in the subsequent human host, the fourth argument is the difference in strain proportion between the most frequent and least frequent strain in the sampled infection, and the last is the number of repetitions to run.
 
-By default, it will only run 10 iteration. This can be changed by altering the value at line 397:
+Also included is the serial transmission script. To run:
+python cotx_serial.py {coi} {strain_differential} {backcross} {n_repetitions}
 
-s = Simulation.simulation(coi,n_oocysts,n_ihepatocytes,10)
-
-where the 10 indicates the number of repetitions to perform.
+For the serial transmission script, n_oocysts and n_ihepatocytes are not specified and are drawn from distributions observed from actual infections. The backcross parameter is a flag indicating whether to : {0: no backcross oppportunity (each new infection on an uninfected host, 1: new infection on a host previously infected with one of the original parental strains (the same each time) 2: a new infection on a host previously infected with a unrelated strain.
 
 Output is a json file that can be loaded back in as a dictionary using the json package (https://docs.python.org/2/library/json.html).
 
