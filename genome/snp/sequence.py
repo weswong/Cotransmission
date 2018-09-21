@@ -2,9 +2,9 @@ import os
 import csv
 from snp import SNP
 
-import logging
-log = logging.getLogger(__name__)
-log.setLevel(logging.INFO)
+##import logging
+#log = logging.getLogger(__name__)
+#og.setLevel(logging.INFO)
 
 def positions_from_csv(filename,min_allele_freq):
     '''
@@ -15,7 +15,7 @@ def positions_from_csv(filename,min_allele_freq):
     1,2402,0.03125
     1,4559,0.02777
     '''
-    log.info('Reading SNPs from file: %s', filename)
+    #log.info('Reading SNPs from file: %s', filename)
     SNPs=[]
     with open(os.path.join(os.path.dirname(__file__),filename)) as f:
         reader=csv.reader(f)
