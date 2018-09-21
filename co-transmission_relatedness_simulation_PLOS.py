@@ -305,10 +305,10 @@ class Infection:
     @classmethod
     def mosquito_transmission(cls,genome_pool,n_oocysts, n_ihepatocytes,weights=None):
         sporozoite_pool = []
-        if weights != None:
+        if weights is not None:
             np.random.shuffle(weights)
         for _ in range(n_oocysts):
-            if weights == None:
+            if weights is None:
                 p1, p2= np.random.choice(genome_pool, 2) # modify to accept weights
             else:
                 print weights
@@ -509,10 +509,14 @@ class Simulation:
                                                                 n_oocysts = self.params['n_oocysts'],
                                                                 n_ihepatocytes = self.params['n_ihepatocytes'],
                                                                 strain_differential = self.params['strain_differential']), 'w')
-        json.dump(self.__dict__, fout)
+        json.dump(self.__dict__, fout, default=default)
         fout.close()
         
                         
+def default(o): #work around with the newer version of json not working well with numpy integers
+    if isinstance(o, np.int64): return int(o)  
+    raise TypeError
+    
 if __name__ == '__main__':
     poi = int(sys.argv[1])
     n_oocysts = int(sys.argv[2])

@@ -7,16 +7,12 @@ import hashlib
 import sys
 sys.path.insert(0, 'genome/snp/')
 
-#import logging
-#log = logging.getLogger(__name__)
-
 import numpy as np # for fast meiosis operations on arrays
 
 import utils
 
 from snp import SNP
 from transmission import Transmission
-import barcode as snp_barcode_mod
 
 
 

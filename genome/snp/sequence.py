@@ -1,11 +1,10 @@
 import os
 import csv
+from snp import SNP
 
 import logging
 log = logging.getLogger(__name__)
 log.setLevel(logging.INFO)
-
-from old_genepi import genome as gn
 
 def positions_from_csv(filename,min_allele_freq):
     '''
@@ -22,7 +21,7 @@ def positions_from_csv(filename,min_allele_freq):
         reader=csv.reader(f)
         header=next(reader,None)
         for chrom,pos,freq in reader:
-            snp=gn.SNP(int(chrom),int(pos),float(freq))
+            snp=SNP(int(chrom),int(pos),float(freq))
             if snp.freq > min_allele_freq:
                 SNPs.append(snp)
 
